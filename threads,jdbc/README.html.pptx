@@ -1,0 +1,41 @@
+EX2-JAVA
+NAME:amir fahoum
+fadi nseir
+id:311471064
+315914911
+===========================================
+will build a simple web crawler that scans URLs of images
+about class:
+we creat 3 class , 
+Crawl
+myrunnable
+Taskstatus
+crawl  the main class ,
+in crawl we read the 4 parameters that the user obtain , that are  thread num delay ret and num retries , and finall the name of the doc that we should read the urls from
+after we store that data in array list  <taskstatus > ,
+we creat object from Task status for every url we have in the file , after we store and creat object of task status . that contain url .
+we creat the threads  and execute it .
+the thread run run function and start the connection to the url . after he connected we goe to the my runnable class where we check the http if it contain an image if yes then we update the bool member in Task status .
+if we failed to reach the web then we try until number of tries that the user entered . every thread make sleep time every time he get the content type.
+in my runnable class we calculate the time that it takes to web to reach the web . and enter in to time member that in taskstatus 
+in the task status we save the data of every Task .
+it Have  4 members
+  private boolean isImage = false;
+    private double time = 0;
+    long  id=-1;
+    private String url;
+===============================================
+About db 
+every URl that contain an image will be saved on the db , we insert the id of the thried and the time and the url to that data base , 
+the inserting happens at crawl class at the end of the code 
+if the url contain image then we connect to the server and give some commands to inser the data to the database  
+at the end the program will print the details that i mentioned before in the console  and update the data table.
+
+===============================================
+some Points
+if the geturl (url  member) equal to 0 in Task status then it means that "timeout"
+if  get url is equal to -1 then it means the failed to connect to web .
+
+that data base that i creat to check it was called ex2 and contain an table that called image , so if you see in the path  of the connection to db this line
+/localhost:3306/ex2?user
+called the db ex2.
